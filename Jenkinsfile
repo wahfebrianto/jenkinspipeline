@@ -31,13 +31,13 @@ pipeline{
       parallel{
         stage('Deploy to Staging'){
           steps{
-            bat "pscp -i E:/Kerjaan/_Jenkins/tomcat-demo.pem **/target/*.war ec2-user@${params.tomcat_dev}:/var/lib/tomcat8/webapps"
+            bat "pscp -i E:/Kerjaan/_Jenkins/tomcat-demo.pem C:/Program Files (x86)/Jenkins/workspace/fully-automated/webapp/target/webapp.war ec2-user@${params.tomcat_dev}:/var/lib/tomcat8/webapps"
           }
         }
 
         stage('Deploy to Production'){
           steps{
-            bat "pscp -i E:/Kerjaan/_Jenkins/tomcat-demo.pem **/target/*.war ec2-user@${params.tomcat_prod}:/var/lib/tomcat8/webapps"
+            bat "pscp -i E:/Kerjaan/_Jenkins/tomcat-demo.pem C:/Program Files (x86)/Jenkins/workspace/fully-automated/webapp/target/webapp.war ec2-user@${params.tomcat_prod}:/var/lib/tomcat8/webapps"
           }
         }
       }
