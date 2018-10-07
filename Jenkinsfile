@@ -24,7 +24,11 @@ pipeline {
     }
     stage('Deploy to Production'){
       steps {
+<<<<<<< HEAD
         timeout(time:5, unit:'DAYS'){
+=======
+        timeout(time:5, until:'DAYS'){
+>>>>>>> 034d329575a180ef5d2ae9002aad43bf4e1ad875
           input message:'Approved PRODUCTION Deployment?'
         }
 
